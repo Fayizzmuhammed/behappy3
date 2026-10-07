@@ -324,10 +324,9 @@
       color: var(--accent-green);
     }
 
-    /* Loading state overlay for seamless 0-delay redirect */
+    /* Brief feedback on click */
     .redirect-active {
-      pointer-events: none;
-      opacity: 0.85;
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -412,6 +411,25 @@
   <script>
     let isRedirecting = false;
 
+    // Reset button state whenever user returns to the page (Back button / bfcache / tab switch)
+    function resetButtonState() {
+      isRedirecting = false;
+      document.body.classList.remove("redirect-active");
+    }
+
+    // Handles browser Back-Forward cache (bfcache) restore
+    window.addEventListener("pageshow", function () {
+      resetButtonState();
+    });
+
+    // Handles window focus and tab visibility change
+    window.addEventListener("focus", resetButtonState);
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible") {
+        resetButtonState();
+      }
+    });
+
     function handleCtaClick(buttonLabel) {
       if (isRedirecting) return;
       isRedirecting = true;
@@ -434,7 +452,10 @@
         }
       }
 
-      // 2. Instantaneous redirect (60ms micro-buffer ensures beacon dispatches in mobile in-app browsers)
+      // 2. Auto-reset lock after 1 second so button is immediately clickable again if user returns
+      setTimeout(resetButtonState, 1000);
+
+      // 3. Instantaneous redirect (60ms micro-buffer ensures beacon dispatches in mobile in-app browsers)
       setTimeout(function () {
         window.location.href = targetUrl;
       }, 60);
