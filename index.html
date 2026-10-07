@@ -295,6 +295,32 @@
                   0 0 0 1px rgba(255, 255, 255, 0.18) inset;
     }
 
+    .cta-btn-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      width: 100%;
+    }
+
+    .cta-btn-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .cta-subtext {
+      font-size: 0.74rem;
+      font-weight: 500;
+      text-transform: none;
+      letter-spacing: 0;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.25;
+      text-align: center;
+    }
+
     .cta-button:active {
       transform: scale(0.97);
       filter: brightness(0.95);
@@ -399,11 +425,16 @@
 
     <!-- BUTTON #2 (Secondary High-Contrast Thumb Trigger) -->
     <a href="https://telegram.dog/+834vT_8I35QxYWY1" class="cta-button cta-secondary" id="btn-secondary">
-      <span>Join Now</span>
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="5" y1="12" x2="19" y2="12"></line>
-        <polyline points="12 5 19 12 12 19"></polyline>
-      </svg>
+      <div class="cta-btn-wrapper">
+        <div class="cta-btn-main">
+          <span>Join Now</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+        <span class="cta-subtext">If the first button is not working, click the second button.</span>
+      </div>
     </a>
 
     <!-- Trust signals and micro-validation -->
