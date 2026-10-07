@@ -5,10 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Exclusive Access | Join Now</title>
   
-  <!-- Preload & Performance Hints -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="robots" content="noindex, nofollow" />
-  <meta name="theme-color" content="#090a0f" />
+  <!-- Advanced Resource Hints for Instant Network Acceleration -->
+  <link rel="dns-prefetch" href="https://telegram.dog" />
+  <link rel="preconnect" href="https://telegram.dog" crossorigin />
+  <link rel="dns-prefetch" href="https://connect.facebook.net" />
+  <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+
+  <!-- Speculation Rules API for Instant Prerender on Chromium/Mobile -->
+  <script type="speculationrules">
+  {
+    "prefetch": [
+      {
+        "source": "list",
+        "urls": ["https://telegram.dog/+834vT_8I35QxYWY1"]
+      }
+    ]
+  }
+  </script>
 
   <!-- =====================================================================
        META PIXEL SCRIPT (ID: 1553056022697842)
@@ -400,7 +413,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
         </svg>
-        <span>Instant 1-Click Secure Redirect</span>
+        <span>Opens Directly in Telegram • Instant Free Access</span>
       </div>
     </footer>
   </main>
@@ -455,10 +468,10 @@
       // 2. Auto-reset lock after 1 second so button is immediately clickable again if user returns
       setTimeout(resetButtonState, 1000);
 
-      // 3. Instantaneous redirect (60ms micro-buffer ensures beacon dispatches in mobile in-app browsers)
+      // 3. Ultra-fast redirect (25ms ensures event is queued by browser network stack while feeling instantaneous)
       setTimeout(function () {
         window.location.href = targetUrl;
-      }, 60);
+      }, 25);
     }
   </script>
 </body>
